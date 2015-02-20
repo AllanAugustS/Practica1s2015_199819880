@@ -39,18 +39,23 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("HouseofTerror", 0, 14)); // NOI18N
         jButton1.setText("JUGADOR PLANTAS");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
-        jButton1.setBounds(310, 260, 129, 27);
+        jButton1.setBounds(300, 260, 130, 27);
 
         jButton2.setFont(new java.awt.Font("HouseofTerror", 0, 14)); // NOI18N
         jButton2.setText("JUGADOR ZOMBIES");
         getContentPane().add(jButton2);
-        jButton2.setBounds(310, 290, 129, 27);
+        jButton2.setBounds(300, 290, 129, 27);
 
         jButton3.setFont(new java.awt.Font("HouseofTerror", 0, 14)); // NOI18N
         jButton3.setText("COMENZAR JUEGO");
         getContentPane().add(jButton3);
-        jButton3.setBounds(310, 320, 129, 27);
+        jButton3.setBounds(300, 320, 129, 27);
 
         jButton4.setFont(new java.awt.Font("HouseofTerror", 0, 14)); // NOI18N
         jButton4.setText("ELIMINAR DATOS");
@@ -60,7 +65,7 @@ public class VentanaInicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(310, 350, 129, 27);
+        jButton4.setBounds(300, 350, 129, 27);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1_199819880/inicio2.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -72,6 +77,16 @@ public class VentanaInicio extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        // TODO add your handling code here:
+        PlantasUsuario ventana = new PlantasUsuario();
+        ventana.show(true);
+        
+                
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
