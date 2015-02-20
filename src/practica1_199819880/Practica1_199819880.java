@@ -16,7 +16,9 @@ public class Practica1_199819880 {
     public static void main(String[] args) {
         // TODO code application logic here
         VentanaInicio ventanita = new VentanaInicio();
-        ventanita.show();
+        ventanita.setVisible(true);
+        ventanita.setResizable(false);
+        ventanita.setLocationRelativeTo(null);
         
     }
 }

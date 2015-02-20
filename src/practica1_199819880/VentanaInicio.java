@@ -29,11 +29,12 @@ public class VentanaInicio extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnsalir = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setTitle("Plantas Vrs Zombies Guatemalteco");
-        setPreferredSize(new java.awt.Dimension(450, 500));
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -45,38 +46,53 @@ public class VentanaInicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(300, 260, 130, 27);
+        jButton1.setBounds(640, 420, 130, 27);
 
         jButton2.setFont(new java.awt.Font("HouseofTerror", 0, 14)); // NOI18N
         jButton2.setText("JUGADOR ZOMBIES");
         getContentPane().add(jButton2);
-        jButton2.setBounds(300, 290, 129, 27);
+        jButton2.setBounds(640, 450, 129, 27);
 
         jButton3.setFont(new java.awt.Font("HouseofTerror", 0, 14)); // NOI18N
         jButton3.setText("COMENZAR JUEGO");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(300, 320, 129, 27);
-
-        jButton4.setFont(new java.awt.Font("HouseofTerror", 0, 14)); // NOI18N
-        jButton4.setText("ELIMINAR DATOS");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(300, 350, 129, 27);
+        getContentPane().add(jButton3);
+        jButton3.setBounds(640, 480, 129, 27);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1_199819880/inicio2.jpg"))); // NOI18N
+        btnsalir.setFont(new java.awt.Font("HouseofTerror", 0, 14)); // NOI18N
+        btnsalir.setText("SALIR");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnsalir);
+        btnsalir.setBounds(640, 540, 129, 27);
+
+        jButton5.setFont(new java.awt.Font("HouseofTerror", 0, 14)); // NOI18N
+        jButton5.setText("ELIMINAR DATOS");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(640, 510, 129, 27);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1_199819880/fondoinicial.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 450, 500);
+        jLabel1.setBounds(0, 0, 800, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnsalirActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
@@ -87,6 +103,14 @@ public class VentanaInicio extends javax.swing.JFrame {
                 
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,10 +147,11 @@ public class VentanaInicio extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnsalir;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
