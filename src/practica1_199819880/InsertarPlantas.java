@@ -255,6 +255,10 @@ public class InsertarPlantas extends javax.swing.JFrame {
 
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         // TODO add your handling code here:
+        ListaCatalogoPlantas listacatalogo = new ListaCatalogoPlantas();
+        listacatalogo.insertafinal(null, txtnombre.getText(), Integer.parseInt(txtpdano.getText()) ,Integer.parseInt(txtpdefensa.getText()) , txttipo.getText());
+        listacatalogo.mostrar();
+        
     }//GEN-LAST:event_btnaceptarActionPerformed
 
     private void txtpdefensaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpdefensaActionPerformed
