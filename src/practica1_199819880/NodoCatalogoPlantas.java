@@ -11,7 +11,7 @@ import java.awt.Image;
  */
 public class NodoCatalogoPlantas {
     
-     Image imagen;
+     String imagen;
      String nombre;
      int PuntosDanos;
      int PuntosDefensa;
@@ -19,7 +19,7 @@ public class NodoCatalogoPlantas {
      NodoCatalogoPlantas anterior;
      NodoCatalogoPlantas siguiente;
 
-    public NodoCatalogoPlantas(Image imagen, String nombre, int PuntosDanos, int PuntosDefensa, String tipoplanta) {
+    public NodoCatalogoPlantas(String imagen, String nombre, int PuntosDanos, int PuntosDefensa, String tipoplanta) {
         this.imagen = imagen;
         this.nombre = nombre;
         this.PuntosDanos = PuntosDanos;
@@ -29,20 +29,14 @@ public class NodoCatalogoPlantas {
         this.siguiente = null;
     }
 
-    
-
-   
-
-    
-    public Image getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(Image imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
-
-    
+     
 
     public String getNombre() {
         return nombre;

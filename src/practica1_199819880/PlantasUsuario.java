@@ -4,6 +4,8 @@
  */
 package practica1_199819880;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Allan
@@ -129,7 +131,13 @@ public class PlantasUsuario extends javax.swing.JFrame {
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         // TODO add your handling code here:
        
-        ListaJugador Plantas = new ListaJugador();
+       if(txtnombreplanta.getText().trim().length()==0 && txtcantplanta.getText().trim().length()==0)
+ {
+       JOptionPane.showMessageDialog(this, "Debe de Llenar los datos de Nombre de jugador y Cantidad de Plantas para continuar");
+ }
+ else
+ {
+       ListaJugador Plantas = new ListaJugador();
         
         
         
@@ -143,6 +151,11 @@ public class PlantasUsuario extends javax.swing.JFrame {
         btnagregarcampo.setEnabled(true);
         
         Plantas.recorrer();
+ }
+        
+        
+        
+        
         
     }//GEN-LAST:event_btnaceptarActionPerformed
 
@@ -154,7 +167,9 @@ public class PlantasUsuario extends javax.swing.JFrame {
     private void btnagregarcampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarcampoActionPerformed
         // TODO add your handling code here:
         agregarCampo campo = new agregarCampo();
-        campo.show(true);
+        campo.setVisible(true);
+        campo.setResizable(false);
+        campo.setLocationRelativeTo(null);
         this.dispose();
         
     }//GEN-LAST:event_btnagregarcampoActionPerformed

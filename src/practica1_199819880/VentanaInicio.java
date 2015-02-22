@@ -98,7 +98,9 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         // TODO add your handling code here:
         PlantasUsuario ventana = new PlantasUsuario();
-        ventana.show(true);
+        ventana.setVisible(true);
+        ventana.setResizable(false);
+        ventana.setLocationRelativeTo(null);
         
                 
         

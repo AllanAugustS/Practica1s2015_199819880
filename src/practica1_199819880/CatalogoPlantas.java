@@ -31,7 +31,6 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtcatalogo = new javax.swing.JTextArea();
         lbltitulo = new javax.swing.JLabel();
-        btnmostrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,14 +52,6 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         lbltitulo.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         lbltitulo.setText("CATALOGO PLANTAS");
 
-        btnmostrar.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
-        btnmostrar.setText("mostrar");
-        btnmostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmostrarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,10 +70,6 @@ public class CatalogoPlantas extends javax.swing.JFrame {
                         .addGap(127, 127, 127)
                         .addComponent(lbltitulo)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnmostrar)
-                .addGap(131, 131, 131))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,9 +78,7 @@ public class CatalogoPlantas extends javax.swing.JFrame {
                 .addComponent(lbltitulo)
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnmostrar)
-                .addGap(19, 19, 19)
+                .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnagregar)
                     .addComponent(btncatalogozombies))
@@ -113,13 +98,6 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnagregarActionPerformed
-
-    private void btnmostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmostrarActionPerformed
-        // TODO add your handling code here:
-       
-        
-        
-    }//GEN-LAST:event_btnmostrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,7 +136,6 @@ public class CatalogoPlantas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnagregar;
     private javax.swing.JButton btncatalogozombies;
-    private javax.swing.JButton btnmostrar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbltitulo;
     private javax.swing.JTextArea txtcatalogo;

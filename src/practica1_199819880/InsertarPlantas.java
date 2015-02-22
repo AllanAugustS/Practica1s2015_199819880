@@ -17,13 +17,13 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class InsertarPlantas extends javax.swing.JFrame {
 
     private FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivo de Imagen", "jpg");
-   
+   String rutaimagen;
     /**
      * Creates new form InsertarPlantas
      */
     public InsertarPlantas() {
         initComponents();
-             
+             rutaimagen = "";
       }
 
     /**
@@ -55,6 +55,7 @@ public class InsertarPlantas extends javax.swing.JFrame {
         lblrutafoto = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblimagenes = new javax.swing.JLabel();
+        lblruta = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -62,7 +63,7 @@ public class InsertarPlantas extends javax.swing.JFrame {
 
         jLabel2.setText("jLabel2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lbltitulo.setFont(new java.awt.Font("HouseofTerror", 0, 24)); // NOI18N
         lbltitulo.setText("Agregar Plantas");
@@ -128,11 +129,17 @@ public class InsertarPlantas extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblimagenes, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblimagenes, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblimagenes, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblimagenes, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,10 +152,6 @@ public class InsertarPlantas extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnaceptar)
-                                .addGap(32, 32, 32)
-                                .addComponent(btncancelar))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblpdefensa)
                                     .addComponent(lblpdano)
@@ -159,22 +162,22 @@ public class InsertarPlantas extends javax.swing.JFrame {
                                     .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txttipo, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtpdano, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtpdefensa, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(2, 2, 2)
+                                    .addComponent(txtpdefensa, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnaceptar)
+                                .addGap(31, 31, 31)
+                                .addComponent(btncancelar)))
+                        .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(btnbuscarimagen))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblimagen)
-                                    .addComponent(lblrutafoto, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(lblimagen)
+                            .addComponent(lblrutafoto, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnbuscarimagen)
+                            .addComponent(lblruta, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(200, 200, 200)
                         .addComponent(lbltitulo)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,7 +190,11 @@ public class InsertarPlantas extends javax.swing.JFrame {
                     .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblimagen))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblruta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtpdefensa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,15 +206,15 @@ public class InsertarPlantas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbltipo)
-                            .addComponent(txttipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                            .addComponent(txttipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnaceptar)
+                            .addComponent(btncancelar))))
+                .addGap(18, 18, 18)
+                .addComponent(btnbuscarimagen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(lblrutafoto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnaceptar)
-                    .addComponent(btncancelar)
-                    .addComponent(btnbuscarimagen))
                 .addGap(19, 19, 19))
         );
 
@@ -230,7 +237,7 @@ public class InsertarPlantas extends javax.swing.JFrame {
         if(option== JFileChooser.APPROVE_OPTION){
         
             String file = dlg.getSelectedFile().getPath();
-            //String ruta = dlg.getSelectedFile().toString();
+            String ruta = dlg.getSelectedFile().toString();
             lblimagenes.setIcon(new ImageIcon(file));
             
             ImageIcon icon = new ImageIcon(file);
@@ -239,7 +246,8 @@ public class InsertarPlantas extends javax.swing.JFrame {
             ImageIcon newicon = new ImageIcon(newimg);
             lblimagenes.setIcon(newicon);
             lblimagenes.setSize(155, 175);
-           // lblrutafoto.setText(file);
+            lblruta.setText(file);
+            rutaimagen="";
             
             
         }
@@ -256,8 +264,9 @@ public class InsertarPlantas extends javax.swing.JFrame {
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         // TODO add your handling code here:
         ListaCatalogoPlantas listacatalogo = new ListaCatalogoPlantas();
-        listacatalogo.insertafinal(null, txtnombre.getText(), Integer.parseInt(txtpdano.getText()) ,Integer.parseInt(txtpdefensa.getText()) , txttipo.getText());
+        listacatalogo.insertafinal(lblruta.getText(), txtnombre.getText(), Integer.parseInt(txtpdano.getText()) ,Integer.parseInt(txtpdefensa.getText()) ,txttipo.getText());
         listacatalogo.mostrar();
+        this.dispose();
         
     }//GEN-LAST:event_btnaceptarActionPerformed
 
@@ -313,6 +322,7 @@ public class InsertarPlantas extends javax.swing.JFrame {
     private javax.swing.JLabel lblnombre;
     private javax.swing.JLabel lblpdano;
     private javax.swing.JLabel lblpdefensa;
+    private javax.swing.JLabel lblruta;
     private javax.swing.JLabel lblrutafoto;
     private javax.swing.JLabel lbltipo;
     private javax.swing.JLabel lbltitulo;

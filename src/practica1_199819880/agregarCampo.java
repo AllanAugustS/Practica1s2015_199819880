@@ -93,7 +93,9 @@ public class agregarCampo extends javax.swing.JFrame {
         // TODO add your handling code here:
         
           ZombiesUsuario zombies = new ZombiesUsuario();
-        zombies.show(true);
+        zombies.setVisible(true);
+        zombies.setResizable(false);
+        zombies.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btncancelarActionPerformed
 

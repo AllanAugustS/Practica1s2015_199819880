@@ -4,6 +4,8 @@
  */
 package practica1_199819880;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Allan
@@ -128,8 +130,14 @@ public class ZombiesUsuario extends javax.swing.JFrame {
 
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         // TODO add your handling code here:
-
-        ListaJugadorZombie Zombie = new ListaJugadorZombie();
+        
+        if(txtnombrezombie.getText().trim().length()==0 && txtcantzombie.getText().trim().length()==0)
+ {
+       JOptionPane.showMessageDialog(this, "Debe de Llenar los datos de Nombre de jugador y Cantidad de Plantas para continuar");
+ }
+ else
+ {
+   ListaJugadorZombie Zombie = new ListaJugadorZombie();
 
         Zombie.insertar(txtnombrezombie.getText());
         Zombie.insertar(txtcantzombie.getText());
@@ -140,7 +148,10 @@ public class ZombiesUsuario extends javax.swing.JFrame {
         txtcantzombie.setEnabled(false);
         btnagregarcampo.setEnabled(true);
 
-        Zombie.recorrer();
+        Zombie.recorrer();     
+ }
+
+       
 
     }//GEN-LAST:event_btnaceptarActionPerformed
 
@@ -152,7 +163,9 @@ public class ZombiesUsuario extends javax.swing.JFrame {
     private void btnagregarcampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarcampoActionPerformed
         // TODO add your handling code here:
         AgregarCampoZombie campo = new AgregarCampoZombie();
-        campo.show(true);
+        campo.setVisible(true);
+        campo.setResizable(false);
+        campo.setLocationRelativeTo(null);
         this.dispose();
 
     }//GEN-LAST:event_btnagregarcampoActionPerformed

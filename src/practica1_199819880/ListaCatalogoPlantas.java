@@ -43,7 +43,7 @@ public class ListaCatalogoPlantas {
     // fin de metodo
     // metodo para insertar al frente  o al inicio de la lista
     
-    public void insertarInicio(Image img, String nom,int pdanos, int pdefensa,String tplanta ){
+    public void insertarInicio(String img, String nom,int pdanos, int pdefensa,String tplanta ){
     
     NodoCatalogoPlantas nuevo = new NodoCatalogoPlantas(img, nom, pdanos, pdefensa, tplanta);
     if(EstaVacia()){
@@ -59,7 +59,7 @@ public class ListaCatalogoPlantas {
     // fin de metodo
     // metodo para insertar al final de la lista
     
-    public void insertafinal(Image img, String nom,int pdanos, int pdefensa,String tplanta){
+    public void insertafinal(String img, String nom,int pdanos, int pdefensa,String tplanta){
         NodoCatalogoPlantas nuevo = new NodoCatalogoPlantas(img, nom, pdanos, pdefensa, tplanta);
         if(EstaVacia()){
     
