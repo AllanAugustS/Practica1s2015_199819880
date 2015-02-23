@@ -3,8 +3,6 @@
  * and open the template in the editor.
  */
 package practica1_199819880;
-
-import java.awt.Image;
 /**
  *
  * @author Allan
@@ -18,6 +16,7 @@ public class NodoCatalogoPlantas {
      String tipoplanta;
      NodoCatalogoPlantas anterior;
      NodoCatalogoPlantas siguiente;
+    
 
     public NodoCatalogoPlantas(String imagen, String nombre, int PuntosDanos, int PuntosDefensa, String tipoplanta) {
         this.imagen = imagen;
@@ -27,6 +26,11 @@ public class NodoCatalogoPlantas {
         this.tipoplanta = tipoplanta;
         this.anterior = null;
         this.siguiente = null;
+        
+       
+    
+   
+        
     }
 
     public String getImagen() {

@@ -91,12 +91,11 @@ public class AgregarCampoZombie extends javax.swing.JFrame {
 
     private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
         // TODO add your handling code here:
+       InsertarPlantas insertar = new InsertarPlantas();
+        insertar.setVisible(true);
+        insertar.setResizable(false);
+        insertar.setLocationRelativeTo(null);
         
-        CatalogoPlantas catalogo = new CatalogoPlantas();
-        catalogo.setVisible(true);
-        catalogo.setResizable(false);
-        catalogo.setLocationRelativeTo(null);
-        this.dispose();
 
        
         this.dispose();

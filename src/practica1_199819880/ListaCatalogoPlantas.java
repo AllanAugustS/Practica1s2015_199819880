@@ -137,7 +137,7 @@ public class ListaCatalogoPlantas {
             iterador = iterador.siguiente;
             
             }
-            System.out.println( "null" );
+            //System.out.println( "null" );
         
         }
         

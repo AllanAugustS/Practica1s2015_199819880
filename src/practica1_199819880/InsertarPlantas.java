@@ -264,9 +264,11 @@ public class InsertarPlantas extends javax.swing.JFrame {
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         // TODO add your handling code here:
         ListaCatalogoPlantas listacatalogo = new ListaCatalogoPlantas();
-        listacatalogo.insertafinal(lblruta.getText(), txtnombre.getText(), Integer.parseInt(txtpdano.getText()) ,Integer.parseInt(txtpdefensa.getText()) ,txttipo.getText());
+        listacatalogo.insertafinal(lblruta.getText(), txtnombre.getText(), Integer.parseInt(txtpdano.getText()) ,Integer.parseInt(txtpdefensa.getText()) ,txttipo.getText()+"ln");
         listacatalogo.mostrar();
-        this.dispose();
+        new CatalogoPlantas(listacatalogo).setVisible(true);
+      this.dispose();
+        
         
     }//GEN-LAST:event_btnaceptarActionPerformed
 

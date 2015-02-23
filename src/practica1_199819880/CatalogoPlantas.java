@@ -4,6 +4,19 @@
  */
 package practica1_199819880;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JScrollPane;
+
 /**
  *
  * @author Allan
@@ -13,8 +26,26 @@ public class CatalogoPlantas extends javax.swing.JFrame {
     /**
      * Creates new form CatalogoPlantas
      */
-    public CatalogoPlantas() {
+    public CatalogoPlantas(ListaCatalogoPlantas lista) {
         initComponents();
+      
+       Labels panel = new Labels(lista);
+       
+       JScrollPane scrollPane = new JScrollPane(panel);
+       scrollPane.setBounds(10, 43, 500, 300);
+       scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+       scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+       
+       this.add(scrollPane);
+   
+       this.repaint();
+        
+        
+      
+      
+      
+                   
+        
     }
 
     /**
@@ -28,9 +59,8 @@ public class CatalogoPlantas extends javax.swing.JFrame {
 
         btnagregar = new javax.swing.JButton();
         btncatalogozombies = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtcatalogo = new javax.swing.JTextArea();
         lbltitulo = new javax.swing.JLabel();
+        btngrafico = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,44 +75,43 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         btncatalogozombies.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         btncatalogozombies.setText("Catalogo Zombies");
 
-        txtcatalogo.setColumns(20);
-        txtcatalogo.setRows(5);
-        jScrollPane1.setViewportView(txtcatalogo);
-
         lbltitulo.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         lbltitulo.setText("CATALOGO PLANTAS");
+
+        btngrafico.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btngrafico.setText("grafica lista jugador");
+        btngrafico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngraficoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnagregar)
-                                .addGap(28, 28, 28)
-                                .addComponent(btncatalogozombies))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(lbltitulo)))
+                .addGap(31, 31, 31)
+                .addComponent(btngrafico)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(btnagregar)
+                .addGap(28, 28, 28)
+                .addComponent(btncatalogozombies)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(205, 205, 205)
+                .addComponent(lbltitulo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
                 .addComponent(lbltitulo)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 397, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btncatalogozombies)
                     .addComponent(btnagregar)
-                    .addComponent(btncatalogozombies))
-                .addGap(21, 21, 21))
+                    .addComponent(btngrafico)))
         );
 
         pack();
@@ -94,10 +123,23 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         agregar.setVisible(true);
         agregar.setResizable(false);
         agregar.setLocationRelativeTo(null);
+        this.dispose();
         
         
         
     }//GEN-LAST:event_btnagregarActionPerformed
+
+    private void btngraficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngraficoActionPerformed
+        // TODO add your handling code here:
+    ListaJugador lista = new ListaJugador();
+        try {
+            lista.cargar();
+        } catch (Exception ex) {
+            Logger.getLogger(CatalogoPlantas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    
+    }//GEN-LAST:event_btngraficoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,15 +171,14 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CatalogoPlantas().setVisible(true);
+                //new CatalogoPlantas().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnagregar;
     private javax.swing.JButton btncatalogozombies;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton btngrafico;
     private javax.swing.JLabel lbltitulo;
-    private javax.swing.JTextArea txtcatalogo;
     // End of variables declaration//GEN-END:variables
 }

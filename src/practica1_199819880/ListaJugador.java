@@ -4,13 +4,46 @@
  */
 package practica1_199819880;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 /**
  *
  * @author Allan
  */
 public class ListaJugador {
     private NodoJugador primero;
+    
+    File f=new File("C:\\Users\\Allan\\Desktop\\Archivos\\ListaJugador.txt");
+    
+    public void cargar()throws Exception
+    {
+    if(!f.exists())
+    {
+    BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+    //primero.getDato().toString() =(NodoJugador)ois.readObject(); //cargamos el archivo al objeto alumno
+    //fis.close();
+    //ois.close();
+    
+    
+    bw.write("Hola");
+    
+    bw.close();   
+    }
+    
+    else{
+    
+    }
+}
 
+    
+
+    
     public ListaJugador() {
     primero = null;
     }

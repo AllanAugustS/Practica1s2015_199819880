@@ -10,8 +10,8 @@ package practica1_199819880;
  */
 public class NodoJugador {
     
-    private String dato;
-    private NodoJugador siguiente;
+    public String dato;
+    public NodoJugador siguiente;
 
     public NodoJugador(String dato) {
         this.dato = dato;
