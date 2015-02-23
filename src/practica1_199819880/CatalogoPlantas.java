@@ -32,7 +32,7 @@ public class CatalogoPlantas extends javax.swing.JFrame {
        Labels panel = new Labels(lista);
        
        JScrollPane scrollPane = new JScrollPane(panel);
-       scrollPane.setBounds(10, 43, 500, 300);
+       scrollPane.setBounds(10, 43, 700, 300);
        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
        
@@ -57,23 +57,19 @@ public class CatalogoPlantas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnagregar = new javax.swing.JButton();
         btncatalogozombies = new javax.swing.JButton();
         lbltitulo = new javax.swing.JLabel();
         btngrafico = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnagregar.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
-        btnagregar.setText("Agregar Plantas");
-        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+        btncatalogozombies.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btncatalogozombies.setText("Agregar Zombies");
+        btncatalogozombies.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnagregarActionPerformed(evt);
+                btncatalogozombiesActionPerformed(evt);
             }
         });
-
-        btncatalogozombies.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
-        btncatalogozombies.setText("Catalogo Zombies");
 
         lbltitulo.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         lbltitulo.setText("CATALOGO PLANTAS");
@@ -93,9 +89,7 @@ public class CatalogoPlantas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(btngrafico)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(btnagregar)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 355, Short.MAX_VALUE)
                 .addComponent(btncatalogozombies)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -110,24 +104,11 @@ public class CatalogoPlantas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 397, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btncatalogozombies)
-                    .addComponent(btnagregar)
                     .addComponent(btngrafico)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
-        // TODO add your handling code here:
-        InsertarPlantas agregar = new InsertarPlantas();
-        agregar.setVisible(true);
-        agregar.setResizable(false);
-        agregar.setLocationRelativeTo(null);
-        this.dispose();
-        
-        
-        
-    }//GEN-LAST:event_btnagregarActionPerformed
 
     private void btngraficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngraficoActionPerformed
         // TODO add your handling code here:
@@ -140,6 +121,16 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         
     
     }//GEN-LAST:event_btngraficoActionPerformed
+
+    private void btncatalogozombiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncatalogozombiesActionPerformed
+        // TODO add your handling code here:
+        InsertarZombies insertar = new InsertarZombies();
+        insertar.setVisible(true);
+        insertar.setResizable(false);
+        insertar.setLocationRelativeTo(null);
+        this.dispose();
+        
+    }//GEN-LAST:event_btncatalogozombiesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,7 +167,6 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnagregar;
     private javax.swing.JButton btncatalogozombies;
     private javax.swing.JButton btngrafico;
     private javax.swing.JLabel lbltitulo;

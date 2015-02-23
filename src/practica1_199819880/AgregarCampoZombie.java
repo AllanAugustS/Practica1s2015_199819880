@@ -34,7 +34,7 @@ public class AgregarCampoZombie extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btncancelar.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
-        btncancelar.setText("Catalogos");
+        btncancelar.setText("Agregar Plantas");
         btncancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncancelarActionPerformed(evt);
@@ -66,7 +66,7 @@ public class AgregarCampoZombie extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(txtcamponuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblingresarcampo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)

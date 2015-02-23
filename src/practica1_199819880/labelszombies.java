@@ -12,12 +12,10 @@ import javax.swing.JLabel;
  *
  * @author Allan
  */
-public class Labels extends JLabel {
-    
-    
-    public Labels(ListaCatalogoPlantas lista){
+public class labelszombies extends JLabel {
+    public labelszombies(ListaCatalogoZombies lista){
     // ciclo sirve para saber cuantos nodos existen
-    NodoCatalogoPlantas raiz = lista.Cabeza;
+    NodoCatalogoZombies raiz = lista.Cabeza;
     int i=0;
     while(raiz != null){
     i++;
