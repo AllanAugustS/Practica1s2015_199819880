@@ -27,15 +27,15 @@ public class ApiladorZombies implements Runnable {
         //int length = g_slist_length (list);
         Random rd = new Random();
         
-        Random random = new Random(System.currentTimeMillis());
+        
         while(true){
             try {
                 
                 int time = rd.nextInt(5000);
                 Thread.sleep(time);
                 
-                 
-                
+               //  int dato = rd.nextInt(ListaCatalogoZombies.listacatalogo.Cabeza.imagen.length());
+               
                
                 System.out.println(pila.apilar(ListaCatalogoZombies.listacatalogo));
             } catch (InterruptedException ex) {
@@ -47,11 +47,4 @@ public class ApiladorZombies implements Runnable {
  
         
     }
-    
-    String[] fruits = {"Apple","Mango","Peach","Banana","Orange","Grapes","Watermelon","Tomato"};
-    
-  String random = (fruits[new Random().nextInt(fruits.length)]);
-    
-    
-    
 }

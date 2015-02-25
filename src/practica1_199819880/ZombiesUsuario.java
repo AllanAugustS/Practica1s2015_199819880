@@ -131,7 +131,7 @@ public class ZombiesUsuario extends javax.swing.JFrame {
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         // TODO add your handling code here:
         
-        if(txtnombrezombie.getText().trim().length()==0 && txtcantzombie.getText().trim().length()==0)
+        if(txtnombrezombie.getText().trim().length()==0 || txtcantzombie.getText().trim().length()==0)
  {
        JOptionPane.showMessageDialog(this, "Debe de Llenar los datos de Nombre de jugador y Cantidad de Plantas para continuar");
  }

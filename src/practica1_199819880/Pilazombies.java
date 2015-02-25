@@ -4,6 +4,8 @@
  */
 package practica1_199819880;
 
+import java.util.Random;
+
 /**
  *
  * @author Allan
@@ -41,9 +43,10 @@ public class Pilazombies {
      
      return "pila llena" + " " + max;
      }
-     arr[tope] = lista.Cabeza.imagen;
+     arr[tope] = ListaCatalogoZombies.listacatalogo.Cabeza.imagen;
      tope++;
-     return "se apilo" + lista.Cabeza.imagen+ ", tope: " +tope ;
+     
+     return "se apilo" + ListaCatalogoZombies.listacatalogo.Cabeza.imagen + ", tope: " +tope ;
      
      }
     
