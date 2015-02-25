@@ -17,7 +17,7 @@ public class InsertarZombies extends javax.swing.JFrame {
     
  private FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivo de Imagen", "jpg");
    String rutaimagen;
-   ListaCatalogoZombies listacatalogo = new ListaCatalogoZombies();
+   
     /**
      * Creates new form InsertarZombies
      */
@@ -228,11 +228,7 @@ public class InsertarZombies extends javax.swing.JFrame {
 
     private void mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarActionPerformed
         // TODO add your handling code here:
-        CatalogoZombies lista = new CatalogoZombies(listacatalogo);
-        lista.setVisible(true);
-        lista.setResizable(false);
-        lista.setLocationRelativeTo(null);
-        this.dispose();
+        
 
     }//GEN-LAST:event_mostrarActionPerformed
 
@@ -280,13 +276,19 @@ public class InsertarZombies extends javax.swing.JFrame {
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         // TODO add your handling code here:
         //ListaCatalogoPlantas listacatalogo = new ListaCatalogoPlantas();
-        listacatalogo.insertafinal(lblruta.getText(), txtnombre.getText(), Integer.parseInt(txtpdano.getText()) ,Integer.parseInt(txtpdefensa.getText()) ,txttipo.getText());
-        listacatalogo.mostrar();
+        ListaCatalogoZombies.listacatalogo.insertafinal(lblruta.getText(), txtnombre.getText(), Integer.parseInt(txtpdano.getText()) ,Integer.parseInt(txtpdefensa.getText()) ,txttipo.getText());
+        ListaCatalogoZombies.listacatalogo.mostrar();
 
         txtnombre.setText("");
         txtpdano.setText("");
         txtpdefensa.setText("");
         txttipo.setText("");
+        
+        CatalogoZombies lista = new CatalogoZombies(ListaCatalogoZombies.listacatalogo);
+        lista.setVisible(true);
+        lista.setResizable(false);
+        lista.setLocationRelativeTo(null);
+        this.dispose();
 
     }//GEN-LAST:event_btnaceptarActionPerformed
 

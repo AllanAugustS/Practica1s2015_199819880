@@ -39,18 +39,29 @@ public class CatalogoZombies extends javax.swing.JFrame {
     private void initComponents() {
 
         btnagregarplanta = new javax.swing.JButton();
+        btninsertarzombies = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnagregarplanta.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         btnagregarplanta.setText("Agregar Plantas");
 
+        btninsertarzombies.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btninsertarzombies.setText("Agregar Zombies");
+        btninsertarzombies.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninsertarzombiesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(511, Short.MAX_VALUE)
+                .addContainerGap(341, Short.MAX_VALUE)
+                .addComponent(btninsertarzombies)
+                .addGap(31, 31, 31)
                 .addComponent(btnagregarplanta)
                 .addGap(54, 54, 54))
         );
@@ -58,12 +69,23 @@ public class CatalogoZombies extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(397, Short.MAX_VALUE)
-                .addComponent(btnagregarplanta)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnagregarplanta)
+                    .addComponent(btninsertarzombies))
                 .addGap(24, 24, 24))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btninsertarzombiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertarzombiesActionPerformed
+        // TODO add your handling code here:
+        InsertarZombies insertar = new InsertarZombies();
+        insertar.setVisible(true);
+        insertar.setResizable(false);
+        insertar.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btninsertarzombiesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,5 +123,6 @@ public class CatalogoZombies extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnagregarplanta;
+    private javax.swing.JButton btninsertarzombies;
     // End of variables declaration//GEN-END:variables
 }

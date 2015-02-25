@@ -11,7 +11,8 @@ package practica1_199819880;
 public class ListaCatalogoZombies {
     NodoCatalogoZombies Cabeza;
     NodoCatalogoZombies Fin;
-
+    static ListaCatalogoZombies listacatalogo = new ListaCatalogoZombies();
+    
     public ListaCatalogoZombies() {
     
     Cabeza = null;

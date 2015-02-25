@@ -13,7 +13,7 @@ public class ListaCatalogoPlantas {
     
     NodoCatalogoPlantas Cabeza;
     NodoCatalogoPlantas Fin;
-
+    static ListaCatalogoPlantas listacatalogo = new ListaCatalogoPlantas();
     public ListaCatalogoPlantas() {
     
     Cabeza = null;

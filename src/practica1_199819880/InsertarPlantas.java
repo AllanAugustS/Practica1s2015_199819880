@@ -18,7 +18,7 @@ public class InsertarPlantas extends javax.swing.JFrame {
 
     private FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivo de Imagen", "jpg");
    String rutaimagen;
-   ListaCatalogoPlantas listacatalogo = new ListaCatalogoPlantas();
+   //ListaCatalogoPlantas listacatalogo = new ListaCatalogoPlantas();
     /**
      * Creates new form InsertarPlantas
      */
@@ -57,7 +57,6 @@ public class InsertarPlantas extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         lblimagenes = new javax.swing.JLabel();
         lblruta = new javax.swing.JLabel();
-        mostrar = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -144,14 +143,6 @@ public class InsertarPlantas extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        mostrar.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
-        mostrar.setText("Mostrar Catalogo");
-        mostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mostrarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -176,8 +167,7 @@ public class InsertarPlantas extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnaceptar)
                                 .addGap(31, 31, 31)
-                                .addComponent(btncancelar))
-                            .addComponent(mostrar))
+                                .addComponent(btncancelar)))
                         .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblrutafoto, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -222,14 +212,9 @@ public class InsertarPlantas extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnaceptar)
                             .addComponent(btncancelar))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnbuscarimagen))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(mostrar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(btnbuscarimagen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(lblrutafoto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -280,13 +265,20 @@ public class InsertarPlantas extends javax.swing.JFrame {
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         // TODO add your handling code here:
         //ListaCatalogoPlantas listacatalogo = new ListaCatalogoPlantas();
-        listacatalogo.insertafinal(lblruta.getText(), txtnombre.getText(), Integer.parseInt(txtpdano.getText()) ,Integer.parseInt(txtpdefensa.getText()) ,txttipo.getText());
-        listacatalogo.mostrar();
-        
+        ListaCatalogoPlantas.listacatalogo.insertafinal(lblruta.getText(), txtnombre.getText(), Integer.parseInt(txtpdano.getText()) ,Integer.parseInt(txtpdefensa.getText()) ,txttipo.getText());
+        ListaCatalogoPlantas.listacatalogo.mostrar();
         txtnombre.setText("");
         txtpdano.setText("");
         txtpdefensa.setText("");
         txttipo.setText("");
+        
+        CatalogoPlantas lista = new CatalogoPlantas(ListaCatalogoPlantas.listacatalogo);
+        lista.setVisible(true);
+        lista.setResizable(false);
+        lista.setLocationRelativeTo(null);
+      this.dispose();
+        
+        
         
         
         
@@ -297,16 +289,6 @@ public class InsertarPlantas extends javax.swing.JFrame {
     private void txtpdefensaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpdefensaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtpdefensaActionPerformed
-
-    private void mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarActionPerformed
-        // TODO add your handling code here:
-        CatalogoPlantas lista = new CatalogoPlantas(listacatalogo);
-        lista.setVisible(true);
-        lista.setResizable(false);
-        lista.setLocationRelativeTo(null);
-      this.dispose();
-        
-    }//GEN-LAST:event_mostrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,7 +342,6 @@ public class InsertarPlantas extends javax.swing.JFrame {
     private javax.swing.JLabel lblrutafoto;
     private javax.swing.JLabel lbltipo;
     private javax.swing.JLabel lbltitulo;
-    private javax.swing.JButton mostrar;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txtpdano;
     private javax.swing.JTextField txtpdefensa;

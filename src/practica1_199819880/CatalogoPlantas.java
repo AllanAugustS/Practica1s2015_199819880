@@ -60,6 +60,7 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         btncatalogozombies = new javax.swing.JButton();
         lbltitulo = new javax.swing.JLabel();
         btngrafico = new javax.swing.JButton();
+        btninsertarplanta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,6 +83,14 @@ public class CatalogoPlantas extends javax.swing.JFrame {
             }
         });
 
+        btninsertarplanta.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btninsertarplanta.setText("Agregar Plantas");
+        btninsertarplanta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninsertarplantaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -89,7 +98,9 @@ public class CatalogoPlantas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(btngrafico)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 355, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                .addComponent(btninsertarplanta)
+                .addGap(43, 43, 43)
                 .addComponent(btncatalogozombies)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -104,7 +115,8 @@ public class CatalogoPlantas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 397, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btncatalogozombies)
-                    .addComponent(btngrafico)))
+                    .addComponent(btngrafico)
+                    .addComponent(btninsertarplanta)))
         );
 
         pack();
@@ -131,6 +143,15 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_btncatalogozombiesActionPerformed
+
+    private void btninsertarplantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninsertarplantaActionPerformed
+        // TODO add your handling code here:
+        InsertarPlantas insertar = new InsertarPlantas();
+        insertar.setVisible(true);
+        insertar.setResizable(false);
+        insertar.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btninsertarplantaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +190,7 @@ public class CatalogoPlantas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncatalogozombies;
     private javax.swing.JButton btngrafico;
+    private javax.swing.JButton btninsertarplanta;
     private javax.swing.JLabel lbltitulo;
     // End of variables declaration//GEN-END:variables
 }
