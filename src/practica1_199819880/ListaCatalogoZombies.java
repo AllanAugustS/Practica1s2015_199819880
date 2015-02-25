@@ -141,5 +141,18 @@ public class ListaCatalogoZombies {
         }
         
         // fin de metodo
+        
+        public int contar(){
+            int contador=0;
+            NodoCatalogoZombies c = Cabeza;
+            
+            while(c!=null){
+            contador++;
+            c = c.getSiguiente();
+           }
+    
+                return contador;   
+    
+      }
     
 }

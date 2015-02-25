@@ -137,10 +137,12 @@ public class ZombiesUsuario extends javax.swing.JFrame {
  }
  else
  {
-   ListaJugadorZombie Zombie = new ListaJugadorZombie();
+   
 
-        Zombie.insertar(txtnombrezombie.getText());
-        Zombie.insertar(txtcantzombie.getText());
+        ListaJugadorZombie.Zombie.insertar(txtnombrezombie.getText());
+        ListaJugadorZombie.Zombie.insertaruno(txtcantzombie.getText());
+        
+       
         txtnombrezombie.setText("");
         txtcantzombie.setText("");
 
@@ -148,7 +150,7 @@ public class ZombiesUsuario extends javax.swing.JFrame {
         txtcantzombie.setEnabled(false);
         btnagregarcampo.setEnabled(true);
 
-        Zombie.recorrer();     
+        ListaJugadorZombie.Zombie.recorrer();     
  }
 
        

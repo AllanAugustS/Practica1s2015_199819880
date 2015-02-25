@@ -9,8 +9,8 @@ package practica1_199819880;
  * @author Allan
  */
 public class ListaJugadorZombie {
-    private NodoJugador primero;
-
+    NodoJugador primero;
+    static ListaJugadorZombie Zombie = new ListaJugadorZombie();
     public ListaJugadorZombie() {
         primero =null;
     }
@@ -35,6 +35,21 @@ public class ListaJugadorZombie {
     }
     }
     
+    public void insertaruno(String cant){
+    
+    if(estaVacia()){
+    
+    primero = new NodoJugador(cant);
+    }else{
+    NodoJugador temporal = primero;
+    while(temporal.getSiguiente()!=null){
+    temporal = temporal.getSiguiente();
+    }
+    
+    temporal.setSiguiente(new NodoJugador(cant));
+    }
+    }
+    
     // metodo para recorrer la listajugador
     
     public void recorrer(){
@@ -47,7 +62,6 @@ public class ListaJugadorZombie {
     }
     
     }
-    
     
     
 }

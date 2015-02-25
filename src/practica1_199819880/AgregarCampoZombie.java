@@ -103,12 +103,12 @@ public class AgregarCampoZombie extends javax.swing.JFrame {
 
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         // TODO add your handling code here:
-        ListaJugadorZombie Zombie = new ListaJugadorZombie() ;
+        
 
-        Zombie.insertar(txtcamponuevo.getText());
+        ListaJugadorZombie.Zombie.insertar(txtcamponuevo.getText());
         txtcamponuevo.setText("");
 
-        Zombie.recorrer();
+        ListaJugadorZombie.Zombie.recorrer();
 
     }//GEN-LAST:event_btnaceptarActionPerformed
 

@@ -40,6 +40,7 @@ public class CatalogoZombies extends javax.swing.JFrame {
 
         btnagregarplanta = new javax.swing.JButton();
         btninsertarzombies = new javax.swing.JButton();
+        btncerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,12 +55,22 @@ public class CatalogoZombies extends javax.swing.JFrame {
             }
         });
 
+        btncerrar.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btncerrar.setText("cerrar");
+        btncerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncerrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(341, Short.MAX_VALUE)
+                .addContainerGap(239, Short.MAX_VALUE)
+                .addComponent(btncerrar)
+                .addGap(31, 31, 31)
                 .addComponent(btninsertarzombies)
                 .addGap(31, 31, 31)
                 .addComponent(btnagregarplanta)
@@ -71,7 +82,8 @@ public class CatalogoZombies extends javax.swing.JFrame {
                 .addContainerGap(397, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnagregarplanta)
-                    .addComponent(btninsertarzombies))
+                    .addComponent(btninsertarzombies)
+                    .addComponent(btncerrar))
                 .addGap(24, 24, 24))
         );
 
@@ -86,6 +98,12 @@ public class CatalogoZombies extends javax.swing.JFrame {
         insertar.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btninsertarzombiesActionPerformed
+
+    private void btncerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncerrarActionPerformed
+        // TODO add your handling code here:
+        
+        this.dispose();
+    }//GEN-LAST:event_btncerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,6 +141,7 @@ public class CatalogoZombies extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnagregarplanta;
+    private javax.swing.JButton btncerrar;
     private javax.swing.JButton btninsertarzombies;
     // End of variables declaration//GEN-END:variables
 }

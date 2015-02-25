@@ -18,6 +18,7 @@ import java.io.ObjectOutputStream;
  */
 public class ListaJugador {
     private NodoJugador primero;
+    static ListaJugador Plantas = new ListaJugador();
     
     File f=new File("C:\\Users\\Allan\\Desktop\\Archivos\\ListaJugador.txt");
     
@@ -67,6 +68,23 @@ public class ListaJugador {
     temporal.setSiguiente(new NodoJugador(dato));
     }
     }
+    
+    public void insertaruno(String cant){
+    
+    if(estaVacia()){
+    
+    primero = new NodoJugador(cant);
+    }else{
+    NodoJugador temporal = primero;
+    while(temporal.getSiguiente()!=null){
+    temporal = temporal.getSiguiente();
+    }
+    
+    temporal.setSiguiente(new NodoJugador(cant));
+    }
+    }
+    
+    
     
     // metodo para recorrer la listajugador
     

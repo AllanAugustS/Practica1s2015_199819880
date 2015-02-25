@@ -6,6 +6,8 @@ package practica1_199819880;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import javax.swing.border.LineBorder;
 
 /**
@@ -45,6 +47,22 @@ public class Juego extends javax.swing.JFrame {
         }
         
         }
+        
+        Pilazombies pila = new Pilazombies();
+        ApiladorZombies apilador = new ApiladorZombies(pila);
+        
+        ExecutorService ejecutor = Executors.newCachedThreadPool();
+        ejecutor.execute(apilador);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     /**
@@ -57,16 +75,18 @@ public class Juego extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelJuego = new javax.swing.JPanel();
+        panelzombiescola = new javax.swing.JScrollPane();
+        panelPlantaspila = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PanelJuego.setPreferredSize(new java.awt.Dimension(580, 380));
+        PanelJuego.setPreferredSize(new java.awt.Dimension(500, 380));
 
         javax.swing.GroupLayout PanelJuegoLayout = new javax.swing.GroupLayout(PanelJuego);
         PanelJuego.setLayout(PanelJuegoLayout);
         PanelJuegoLayout.setHorizontalGroup(
             PanelJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
         PanelJuegoLayout.setVerticalGroup(
             PanelJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,17 +97,24 @@ public class Juego extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(panelPlantaspila, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
                 .addComponent(PanelJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(panelzombiescola, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
-                .addComponent(PanelJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelzombiescola)
+                    .addComponent(panelPlantaspila))
+                .addGap(62, 62, 62))
         );
 
         pack();
@@ -129,5 +156,7 @@ public class Juego extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelJuego;
+    private javax.swing.JScrollPane panelPlantaspila;
+    private javax.swing.JScrollPane panelzombiescola;
     // End of variables declaration//GEN-END:variables
 }

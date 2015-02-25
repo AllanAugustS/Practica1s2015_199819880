@@ -137,12 +137,13 @@ public class PlantasUsuario extends javax.swing.JFrame {
  }
  else
  {
-       ListaJugador Plantas = new ListaJugador();
+       
         
         
         
-        Plantas.insertar(txtnombreplanta.getText());
-        Plantas.insertar(txtcantplanta.getText());
+        ListaJugador.Plantas.insertar(txtnombreplanta.getText());
+        ListaJugador.Plantas.insertaruno(txtcantplanta.getText());
+        
         txtnombreplanta.setText("");
         txtcantplanta.setText("");
         
@@ -150,7 +151,7 @@ public class PlantasUsuario extends javax.swing.JFrame {
         txtcantplanta.setEnabled(false);
         btnagregarcampo.setEnabled(true);
         
-        Plantas.recorrer();
+        ListaJugador.Plantas.recorrer();
  }
         
         

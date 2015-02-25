@@ -101,13 +101,13 @@ public class agregarCampo extends javax.swing.JFrame {
 
     private void btnaceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaceptarActionPerformed
         // TODO add your handling code here:
-        ListaJugador Plantas = new ListaJugador() ;
         
         
-      Plantas.insertar(txtcamponuevo.getText());
+        
+      ListaJugador.Plantas.insertar(txtcamponuevo.getText());
        txtcamponuevo.setText("");
        
-       Plantas.recorrer();
+       ListaJugador.Plantas.recorrer();
   
       
         
