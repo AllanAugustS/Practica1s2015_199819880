@@ -30,8 +30,10 @@ public class AgregarCampoZombie extends javax.swing.JFrame {
         btnaceptar = new javax.swing.JButton();
         lblingresarcampo = new javax.swing.JLabel();
         txtcamponuevo = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btncancelar.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         btncancelar.setText("Agregar Plantas");
@@ -40,6 +42,7 @@ public class AgregarCampoZombie extends javax.swing.JFrame {
                 btncancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 109, -1, -1));
 
         btnaceptar.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         btnaceptar.setText("Aceptar");
@@ -48,43 +51,15 @@ public class AgregarCampoZombie extends javax.swing.JFrame {
                 btnaceptarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnaceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 109, -1, -1));
 
         lblingresarcampo.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         lblingresarcampo.setText("INGRESAR NUEVO CAMPO");
+        getContentPane().add(lblingresarcampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 29, 171, -1));
+        getContentPane().add(txtcamponuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 71, 116, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(btnaceptar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btncancelar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(txtcamponuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(50, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblingresarcampo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(lblingresarcampo)
-                .addGap(18, 18, 18)
-                .addComponent(txtcamponuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnaceptar)
-                    .addComponent(btncancelar))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1_199819880/agregarcampoplanta.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 170));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -149,6 +124,7 @@ public class AgregarCampoZombie extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnaceptar;
     private javax.swing.JButton btncancelar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblingresarcampo;
     private javax.swing.JTextField txtcamponuevo;
     // End of variables declaration//GEN-END:variables

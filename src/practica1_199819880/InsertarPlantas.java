@@ -57,6 +57,7 @@ public class InsertarPlantas extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         lblimagenes = new javax.swing.JLabel();
         lblruta = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -65,42 +66,53 @@ public class InsertarPlantas extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbltitulo.setFont(new java.awt.Font("HouseofTerror", 0, 24)); // NOI18N
         lbltitulo.setText("Agregar Plantas");
+        getContentPane().add(lbltitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 25, -1, -1));
 
         lblnombre.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         lblnombre.setText("Nombre:");
+        getContentPane().add(lblnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 75, -1, -1));
 
         lblpdefensa.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         lblpdefensa.setText("Puntos de Defensa:");
+        getContentPane().add(lblpdefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 118, -1, -1));
 
         lblpdano.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         lblpdano.setText("Puntos de Daño:");
+        getContentPane().add(lblpdano, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 153, -1, -1));
 
         lbltipo.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         lbltipo.setText("Tipo de Planta:");
+        getContentPane().add(lbltipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 189, -1, -1));
 
         lblimagen.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         lblimagen.setText("Imagen:");
+        getContentPane().add(lblimagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 75, -1, -1));
+        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 80, 139, -1));
 
         txtpdefensa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtpdefensaActionPerformed(evt);
             }
         });
+        getContentPane().add(txtpdefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 118, 139, -1));
 
         txtpdano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtpdanoActionPerformed(evt);
             }
         });
+        getContentPane().add(txtpdano, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 158, 139, -1));
 
         txttipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txttipoActionPerformed(evt);
             }
         });
+        getContentPane().add(txttipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 194, 139, -1));
 
         btnbuscarimagen.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         btnbuscarimagen.setText("Buscar Imagen");
@@ -109,6 +121,7 @@ public class InsertarPlantas extends javax.swing.JFrame {
                 btnbuscarimagenActionPerformed(evt);
             }
         });
+        getContentPane().add(btnbuscarimagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 300, -1, -1));
 
         btnaceptar.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         btnaceptar.setText("Aceptar");
@@ -117,6 +130,7 @@ public class InsertarPlantas extends javax.swing.JFrame {
                 btnaceptarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnaceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 249, -1, -1));
 
         btncancelar.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         btncancelar.setText("Cancelar");
@@ -125,6 +139,8 @@ public class InsertarPlantas extends javax.swing.JFrame {
                 btncancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 249, -1, -1));
+        getContentPane().add(lblrutafoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 382, 154, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -143,81 +159,11 @@ public class InsertarPlantas extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblpdefensa)
-                                    .addComponent(lblpdano)
-                                    .addComponent(lbltipo)
-                                    .addComponent(lblnombre))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txttipo, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtpdano, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtpdefensa, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnaceptar)
-                                .addGap(31, 31, 31)
-                                .addComponent(btncancelar)))
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblrutafoto, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnbuscarimagen)
-                            .addComponent(lblruta, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblimagen)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(lbltitulo)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lbltitulo)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblnombre)
-                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblimagen))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblruta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtpdefensa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblpdefensa))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblpdano)
-                            .addComponent(txtpdano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbltipo)
-                            .addComponent(txttipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnaceptar)
-                            .addComponent(btncancelar))))
-                .addGap(18, 18, 18)
-                .addComponent(btnbuscarimagen)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(lblrutafoto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
-        );
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 118, -1, -1));
+        getContentPane().add(lblruta, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 266, 206, 16));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/practica1_199819880/agregarcampoplanta.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -332,6 +278,7 @@ public class InsertarPlantas extends javax.swing.JFrame {
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblimagen;
     private javax.swing.JLabel lblimagenes;

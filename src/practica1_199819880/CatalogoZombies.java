@@ -41,6 +41,7 @@ public class CatalogoZombies extends javax.swing.JFrame {
         btnagregarplanta = new javax.swing.JButton();
         btninsertarzombies = new javax.swing.JButton();
         btncerrar = new javax.swing.JButton();
+        lbltitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,35 +57,42 @@ public class CatalogoZombies extends javax.swing.JFrame {
         });
 
         btncerrar.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
-        btncerrar.setText("cerrar");
+        btncerrar.setText("Cerrar");
         btncerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncerrarActionPerformed(evt);
             }
         });
 
+        lbltitulo.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        lbltitulo.setText("CATALOGO ZOMBIES");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(239, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(205, 205, 205)
+                .addComponent(lbltitulo))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addComponent(btncerrar)
-                .addGap(31, 31, 31)
+                .addGap(250, 250, 250)
                 .addComponent(btninsertarzombies)
                 .addGap(31, 31, 31)
-                .addComponent(btnagregarplanta)
-                .addGap(54, 54, 54))
+                .addComponent(btnagregarplanta))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(397, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnagregarplanta)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(lbltitulo)
+                .addGap(373, 373, 373)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(btncerrar))
                     .addComponent(btninsertarzombies)
-                    .addComponent(btncerrar))
-                .addGap(24, 24, 24))
+                    .addComponent(btnagregarplanta)))
         );
 
         pack();
@@ -143,5 +151,6 @@ public class CatalogoZombies extends javax.swing.JFrame {
     private javax.swing.JButton btnagregarplanta;
     private javax.swing.JButton btncerrar;
     private javax.swing.JButton btninsertarzombies;
+    private javax.swing.JLabel lbltitulo;
     // End of variables declaration//GEN-END:variables
 }

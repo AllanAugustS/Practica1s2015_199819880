@@ -96,27 +96,25 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(205, 205, 205)
+                .addComponent(lbltitulo))
+            .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(btngrafico)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, Short.MAX_VALUE)
+                .addGap(271, 271, 271)
                 .addComponent(btninsertarplanta)
                 .addGap(43, 43, 43)
-                .addComponent(btncatalogozombies)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(205, 205, 205)
-                .addComponent(lbltitulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btncatalogozombies))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(lbltitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 397, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btncatalogozombies)
+                .addGap(397, 397, 397)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btngrafico)
-                    .addComponent(btninsertarplanta)))
+                    .addComponent(btninsertarplanta)
+                    .addComponent(btncatalogozombies)))
         );
 
         pack();
