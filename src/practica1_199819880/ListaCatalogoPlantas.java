@@ -197,7 +197,7 @@ public class ListaCatalogoPlantas {
         if(!EstaVacia()){
             NodoCatalogoPlantas temporal = Cabeza;
             while(temporal!=null){
-                r=r+"struct"+cont+" [label=\"<f0>"+temporal.imagen+"|<f1>sig\"];\n";
+                r=r+"struct"+cont+" [label=\"<f0>"+temporal.imagen + temporal.nombre+ temporal.PuntosDefensa+ temporal.PuntosDanos+temporal.tipoplanta+"|<f1>sig\"];\n";
                 cont++;
                 temporal=temporal.getSiguiente();
             }

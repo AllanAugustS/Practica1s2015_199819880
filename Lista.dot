@@ -1,4 +1,6 @@
 digraph lista{
  rankdir=LR;node [shape = record, style=rounded];
-struct0 [label="<f0>C:\Users\Allan\Documents\Usac\Estructuras de Datos\zombies\Zombi.jpg|<f1>sig"];
+struct0 [label="<f0>Allan|<f1>sig"];
+struct1 [label="<f0>10|<f1>sig"];
+struct0:f1->struct1:f0;
 }

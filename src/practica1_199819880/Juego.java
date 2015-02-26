@@ -18,17 +18,59 @@ import javax.swing.border.LineBorder;
  */
 public class Juego extends javax.swing.JFrame {
 
-    int n= 2, m=4;
+    //int n= 2, m=4;
     
-    Etiqueta[][] label = new Etiqueta[n][m];
+    //Etiqueta[][] label = new Etiqueta[n][m];
     /**
      * Creates new form Juego
      */
     public Juego() {
         initComponents();
         
-        PanelJuego.setLayout(new GridLayout(n,m));
+        //PanelJuego.setLayout(new GridLayout(n,m));
         
+        //setTitle("Plants vs Zombies Guatemalteco");
+        //setLayout(null);
+        //for (int i = 0; i<n;i++){
+       // final int ii=i;
+        //for(int j=0;j<m;j++){
+          //  final int jj=j;
+            
+         //   label[ii][jj] = new Etiqueta();
+          //  label[ii][jj].setBackground(Color.GREEN);
+            //label[ii][jj].setBorder(LineBorder.createGrayLineBorder());
+          //  label[ii][jj].setBounds(15+ii*10, 30+jj*10, 10, 10);
+           // label[ii][jj].setVisible(true);
+           // this.add(label[ii][jj]);
+           // PanelJuego.add(label[ii][jj]);
+            
+        
+        
+        //}
+        
+        //}
+        
+        Pilazombies pila = new Pilazombies();
+        ApiladorZombies apilador = new ApiladorZombies(pila);
+        
+        ExecutorService ejecutor = Executors.newCachedThreadPool();
+        ejecutor.execute(apilador);
+        
+          ColaPlantas cola = new ColaPlantas();
+        Encoladorplantas encolador = new Encoladorplantas(cola);
+        
+        
+        ejecutor.execute(encolador);
+        
+     
+        
+    }
+public void matriz(int n,int m)
+    {
+       
+        Etiqueta[][] label = new Etiqueta[n][m];
+        PanelJuego.setLayout(new GridLayout(n,m));
+       
         setTitle("Plants vs Zombies Guatemalteco");
         setLayout(null);
         for (int i = 0; i<n;i++){
@@ -49,28 +91,6 @@ public class Juego extends javax.swing.JFrame {
         }
         
         }
-        
-        Pilazombies pila = new Pilazombies();
-        ApiladorZombies apilador = new ApiladorZombies(pila);
-        
-        ExecutorService ejecutor = Executors.newCachedThreadPool();
-        ejecutor.execute(apilador);
-        
-          ColaPlantas cola = new ColaPlantas();
-        Encoladorplantas encolador = new Encoladorplantas(cola);
-        
-        
-        ejecutor.execute(encolador);
-        
-        
-         
-        
-        
-        
-        
-        
-        
-        
         
     }
 
@@ -144,6 +164,11 @@ public class Juego extends javax.swing.JFrame {
 
         btncatalgozombiesgrafica1.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
         btncatalgozombiesgrafica1.setText("Reporte Catalogo Zombies");
+        btncatalgozombiesgrafica1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncatalgozombiesgrafica1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btncatalgozombiesgrafica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 500, -1, -1));
 
         btncolaplantasgrafica.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
@@ -216,6 +241,19 @@ public class Juego extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btncolaplantasgrafica1ActionPerformed
+
+    private void btncatalgozombiesgrafica1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncatalgozombiesgrafica1ActionPerformed
+        // TODO add your handling code here:
+         ListaCatalogoZombies.listacatalogo.Dibujar();
+           ListaCatalogoZombies.listacatalogo.GenerarPNG();
+            Runtime runtime = Runtime.getRuntime();
+        try {
+            runtime.exec("mspaint ListaCatalogoZombies.png");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(CatalogoPlantas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btncatalgozombiesgrafica1ActionPerformed
 
     /**
      * @param args the command line arguments

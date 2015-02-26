@@ -1,6 +1,7 @@
 package practica1_199819880;
 
 
+import java.awt.Color;
 import javax.swing.JLabel;
 
 /*
@@ -21,6 +22,9 @@ public class preinicio extends javax.swing.JFrame {
         initComponents();
     }
 
+    
+       
+    
     
     
     /**
@@ -106,6 +110,7 @@ public class preinicio extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         Juego jueguito = new Juego();
+        jueguito.matriz(Integer.parseInt(txtfilas.getText()), Integer.parseInt(txtcolumnas.getText()));
         jueguito.setVisible(true);
         jueguito.setResizable(false);
         jueguito.setLocationRelativeTo(null);
