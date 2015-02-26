@@ -1,0 +1,10 @@
+digraph lista{
+ rankdir=LR;node [shape = record, style=rounded];
+struct0 [label="<f0>karen|<f1>sig"];
+struct1 [label="<f0>monica|<f1>sig"];
+struct2 [label="<f0>|<f1>sig"];
+struct3 [label="<f0>carmen|<f1>sig"];
+struct0:f1->struct1:f0;
+struct1:f1->struct2:f0;
+struct2:f1->struct3:f0;
+}

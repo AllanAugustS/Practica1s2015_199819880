@@ -76,7 +76,7 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         lbltitulo.setText("CATALOGO PLANTAS");
 
         btngrafico.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
-        btngrafico.setText("grafica lista jugador");
+        btngrafico.setText("cerrar");
         btngrafico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btngraficoActionPerformed(evt);
@@ -98,7 +98,7 @@ public class CatalogoPlantas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(btngrafico)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, Short.MAX_VALUE)
                 .addComponent(btninsertarplanta)
                 .addGap(43, 43, 43)
                 .addComponent(btncatalogozombies)
@@ -122,18 +122,6 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btngraficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngraficoActionPerformed
-        // TODO add your handling code here:
-    ListaJugador lista = new ListaJugador();
-        try {
-            lista.cargar();
-        } catch (Exception ex) {
-            Logger.getLogger(CatalogoPlantas.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    
-    }//GEN-LAST:event_btngraficoActionPerformed
-
     private void btncatalogozombiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncatalogozombiesActionPerformed
         // TODO add your handling code here:
         InsertarZombies insertar = new InsertarZombies();
@@ -152,6 +140,12 @@ public class CatalogoPlantas extends javax.swing.JFrame {
         insertar.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btninsertarplantaActionPerformed
+
+    private void btngraficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngraficoActionPerformed
+        // TODO add your handling code here:
+       this.dispose();
+
+    }//GEN-LAST:event_btngraficoActionPerformed
 
     /**
      * @param args the command line arguments

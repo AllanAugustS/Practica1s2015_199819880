@@ -11,7 +11,7 @@ import javax.swing.JLabel;
  *
  * @author Allan
  */
-public class Etiqueta extends JLabel {
+public class Etiqueta extends JButton {
     
     int estado;
     

@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.border.LineBorder;
 
 /**
@@ -36,7 +38,7 @@ public class Juego extends javax.swing.JFrame {
             
             label[ii][jj] = new Etiqueta();
             label[ii][jj].setBackground(Color.GREEN);
-            label[ii][jj].setBorder(LineBorder.createGrayLineBorder());
+            //label[ii][jj].setBorder(LineBorder.createGrayLineBorder());
             label[ii][jj].setBounds(15+ii*10, 30+jj*10, 10, 10);
             label[ii][jj].setVisible(true);
             this.add(label[ii][jj]);
@@ -54,7 +56,14 @@ public class Juego extends javax.swing.JFrame {
         ExecutorService ejecutor = Executors.newCachedThreadPool();
         ejecutor.execute(apilador);
         
+          ColaPlantas cola = new ColaPlantas();
+        Encoladorplantas encolador = new Encoladorplantas(cola);
         
+        
+        ejecutor.execute(encolador);
+        
+        
+         
         
         
         
@@ -77,6 +86,12 @@ public class Juego extends javax.swing.JFrame {
         PanelJuego = new javax.swing.JPanel();
         panelzombiescola = new javax.swing.JScrollPane();
         panelPlantaspila = new javax.swing.JScrollPane();
+        btnlistaplantagrafica = new javax.swing.JButton();
+        btncatalgoplantasgrafica = new javax.swing.JButton();
+        btnlistazombiegrafica2 = new javax.swing.JButton();
+        btncatalgozombiesgrafica1 = new javax.swing.JButton();
+        btncolaplantasgrafica = new javax.swing.JButton();
+        btnPilaZombiesgrafica1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,23 +108,77 @@ public class Juego extends javax.swing.JFrame {
             .addGap(0, 380, Short.MAX_VALUE)
         );
 
+        btnlistaplantagrafica.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btnlistaplantagrafica.setText("Reporte lista Jugador Plantas");
+        btnlistaplantagrafica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlistaplantagraficaActionPerformed(evt);
+            }
+        });
+
+        btncatalgoplantasgrafica.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btncatalgoplantasgrafica.setText("Reporte Catalogo Plantas");
+
+        btnlistazombiegrafica2.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btnlistazombiegrafica2.setText("Reporte lista Jugador Zombie");
+        btnlistazombiegrafica2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlistazombiegrafica2ActionPerformed(evt);
+            }
+        });
+
+        btncatalgozombiesgrafica1.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btncatalgozombiesgrafica1.setText("Reporte Catalogo Zombies");
+
+        btncolaplantasgrafica.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btncolaplantasgrafica.setText("Reporte Cola Plantas");
+
+        btnPilaZombiesgrafica1.setFont(new java.awt.Font("HouseofTerror", 0, 18)); // NOI18N
+        btnPilaZombiesgrafica1.setText("Reporte Pila Zombies");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(panelPlantaspila, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(PanelJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(panelzombiescola, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(panelPlantaspila, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(PanelJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(panelzombiescola, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnlistaplantagrafica)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btncatalgoplantasgrafica)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btncolaplantasgrafica))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnlistazombiegrafica2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btncatalgozombiesgrafica1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnPilaZombiesgrafica1)))))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnlistaplantagrafica)
+                    .addComponent(btncatalgoplantasgrafica)
+                    .addComponent(btncolaplantasgrafica))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnlistazombiegrafica2)
+                    .addComponent(btncatalgozombiesgrafica1)
+                    .addComponent(btnPilaZombiesgrafica1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PanelJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelzombiescola)
@@ -119,6 +188,36 @@ public class Juego extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnlistaplantagraficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistaplantagraficaActionPerformed
+        // TODO add your handling code here:
+        
+        ListaJugador.Plantas.Dibujar();
+            ListaJugador.Plantas.GenerarPNG();
+            Runtime runtime = Runtime.getRuntime();
+        try {
+            runtime.exec("mspaint ListaJugadorPlantas.png");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(CatalogoPlantas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnlistaplantagraficaActionPerformed
+
+    private void btnlistazombiegrafica2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistazombiegrafica2ActionPerformed
+        // TODO add your handling code here:
+        
+        ListaJugadorZombie.Zombie.Dibujar();
+           ListaJugadorZombie.Zombie.GenerarPNG();
+            Runtime runtime = Runtime.getRuntime();
+        try {
+            runtime.exec("mspaint ListaJugadorZombies.png");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(CatalogoPlantas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnlistazombiegrafica2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,6 +255,12 @@ public class Juego extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelJuego;
+    private javax.swing.JButton btnPilaZombiesgrafica1;
+    private javax.swing.JButton btncatalgoplantasgrafica;
+    private javax.swing.JButton btncatalgozombiesgrafica1;
+    private javax.swing.JButton btncolaplantasgrafica;
+    private javax.swing.JButton btnlistaplantagrafica;
+    private javax.swing.JButton btnlistazombiegrafica2;
     private javax.swing.JScrollPane panelPlantaspila;
     private javax.swing.JScrollPane panelzombiescola;
     // End of variables declaration//GEN-END:variables

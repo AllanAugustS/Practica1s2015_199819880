@@ -4,6 +4,10 @@
  */
 package practica1_199819880;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 /**
  *
  * @author Allan
@@ -61,6 +65,70 @@ public class ListaJugadorZombie {
     
     }
     
+    }
+    
+    public void Dibujar(){
+    
+    String source="digraph lista{\n rankdir=LR;node [shape = record, style=rounded];\n";
+        source = source+this.Generar();
+        FileWriter archivoDot = null;
+        PrintWriter escritor=null;
+        try{         
+         archivoDot=new FileWriter("Lista.dot");
+         escritor = new PrintWriter(archivoDot);
+         escritor.println(source);
+     }catch(IOException e){
+         e.printStackTrace();            
+     }finally{
+            try{
+                if(archivoDot!=null){
+                    archivoDot.close();
+                }
+            }catch(Exception ex){ex.printStackTrace();}
+     }
+     
+    
+    
+    }
+    
+    public void GenerarPNG(){
+    try{
+            String dotPath="C:\\Users\\Allan\\Desktop\\release\\bin\\dot.exe";
+            //String dotPath="C:\\Program Files (x86)\\Graphviz 2.28\\bin\\dot.exe";
+            String archivoDot="Lista.dot";
+            String archivoPNG="ListaJugadorZombies.png";
+            String tParam="-Tpng";// salida PNG
+            String oParam="-o";
+            
+            String[] command= new String[5];
+            command[0]=dotPath;
+            command[1]=tParam;
+            command[2]=archivoDot;
+            command[3]=oParam;
+            command[4]=archivoPNG;
+            
+            Runtime runtime = Runtime.getRuntime();
+            runtime.exec(command);
+                    
+        }catch(Exception e){}
+    }
+    public String Generar(){
+        String r="";
+        String enlaces="";
+        int cont=0;
+        if(!estaVacia()){
+            NodoJugador temporal = primero;
+            while(temporal!=null){
+                r=r+"struct"+cont+" [label=\"<f0>"+temporal.getDato()+"|<f1>sig\"];\n";
+                cont++;
+                temporal=temporal.getSiguiente();
+            }
+            for(int i=0;i<cont-1;i++){
+                enlaces = enlaces+"struct"+i+":f1->struct"+(i+1)+":f0;\n";
+            }
+        }
+        r=r+enlaces+"}";
+        return r;
     }
     
     
